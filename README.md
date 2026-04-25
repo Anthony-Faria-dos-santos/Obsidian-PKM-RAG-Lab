@@ -33,15 +33,15 @@ Les protocoles, les setups reproductibles et les résultats vivent dans le wiki,
 
 ```
 obsidian-Brain/
-├── pilot-gen/        Sous-projet, usine a prompts pilotes
+├── pilot-generator/  Sous-projet, usine a prompts pilotes
 ├── docs/             Notes de labo, sources externes, captures
 │   └── wiki/         Source des pages du wiki GitHub
 └── README.md
 ```
 
-### `pilot-gen/`
+### `pilot-generator/`
 
-Premier moteur opérationnel. On lui donne un identifiant de cluster, il sort un prompt pilote prêt à exécuter, calibré sur un standard de qualité reproductible. 181 clusters au catalogue, répartis sur cinq domaines (cybersec, dev, cloud, IA/ML, réseaux). Chaque run produit un sous-vault Obsidian autonome. Persistance Git, statut courant dans `pilot-gen/STATUS.md`, journal dans `pilot-gen/CHANGELOG.md`.
+Premier moteur opérationnel. On lui donne un identifiant de cluster, il sort un prompt pilote prêt à exécuter, calibré sur un standard de qualité reproductible. 181 clusters au catalogue, répartis sur cinq domaines (cybersec, dev, cloud, IA/ML, réseaux). Chaque run produit un sous-vault Obsidian autonome. Persistance Git, statut courant dans `pilot-generator/STATUS.md`, journal dans `pilot-generator/CHANGELOG.md`.
 
 Tout le détail opérationnel (installation, commandes, protocoles de génération et de QC) est documenté dans le wiki.
 
@@ -62,8 +62,8 @@ Toute la documentation opérationnelle vit sur le wiki GitHub :
 - [Conventions vault](docs/wiki/Conventions-Vault.md)
 - [Règles de rédaction](docs/wiki/Regles-Redaction.md)
 - [Anti-hallucination](docs/wiki/Anti-Hallucination.md)
-- [pilot-gen, commandes](docs/wiki/Pilot-Gen-Commandes.md)
-- [pilot-gen, protocoles](docs/wiki/Pilot-Gen-Protocoles.md)
+- [pilot-generator, commandes](docs/wiki/Pilot-Generator-Commandes.md)
+- [pilot-generator, protocoles](docs/wiki/Pilot-Generator-Protocoles.md)
 - [Banc d'essai](docs/wiki/Banc-Essai.md)
 - [Stack et prérequis](docs/wiki/Stack.md)
 - [Roadmap](docs/wiki/Roadmap.md)
