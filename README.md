@@ -49,7 +49,7 @@ Tout le détail opérationnel (installation, commandes, protocoles de générati
 
 Mémoire externe du labo. Sources de référence, prompts d'inspiration, screenshots de graphes, captures de tests RAG, notes de protocole. Volontairement séparé du code : ça doit pouvoir survivre à une refonte de l'usine.
 
-`docs/wiki/` contient la source Markdown des pages du wiki GitHub, versionnée avec le code. Voir [Sync-Wiki]([docs/wiki/Sync-Wiki.md](https://github.com/Anthony-Faria-dos-santos/Obsidian-PKM-RAG-Lab/wiki)) pour la procédure de publication.
+`docs/wiki/` contient la source Markdown des pages du wiki GitHub, versionnée avec le code. Voir [Sync-Wiki](https://github.com/Anthony-Faria-dos-santos/Obsidian-PKM-RAG-Lab/wiki/Sync-Wiki#sync-wiki) pour la procédure de publication.
 
 ---
 
@@ -57,7 +57,7 @@ Mémoire externe du labo. Sources de référence, prompts d'inspiration, screens
 
 Toute la documentation opérationnelle vit sur le wiki GitHub :
 
-- [Home]([docs/wiki/Home.md](https://github.com/Anthony-Faria-dos-santos/Obsidian-PKM-RAG-Lab/wiki))
+- [Home](https://github.com/Anthony-Faria-dos-santos/Obsidian-PKM-RAG-Lab/wiki#obsidian-brain-wiki)
 
 ---
 
