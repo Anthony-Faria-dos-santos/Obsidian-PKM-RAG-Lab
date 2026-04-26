@@ -23,7 +23,7 @@ Conçu pour Claude Code CLI en mode Opus 4.7 ou Sonnet 4.6 extended context (1M 
 
 ```powershell
 # Windows PowerShell
-cd "C:\Users\Anthony\Projects"
+cd "C:\Users\v\Projects"
 # Copier le contenu de /sessions/.../outputs/pilot-generator vers ce repertoire
 # (utiliser l'UI Cowork ou une commande de synchro)
 
@@ -33,7 +33,7 @@ git add .
 git commit -m "chore: bootstrap pilot-generator project"
 
 # Copier les curriculums existants
-Copy-Item "C:\Users\Anthony\Documents\curriculums\*.md" .\curriculums\
+Copy-Item "C:\Users\{USER}\Documents\curriculums\*.md" .\curriculums\
 
 # Lancer Claude Code avec context 1M
 claude --model claude-opus-4-7
@@ -162,7 +162,7 @@ Tout prompt genere doit respecter :
 ## Integration avec le Second Brain existant
 
 - Le projet `pilot-generator` vit **hors** du vault Obsidian. Il genere des fichiers qui sont ensuite **deposes** dans le vault au moment de runer le prompt pilote reel.
-- Le vault Obsidian lui-meme reste a `C:\Users\Anthony\Obsidian\SecondBrain-Anthony` avec son propre `CLAUDE.md` racine (celui genere precedemment).
+- Le vault Obsidian lui-meme reste a `C:\Users\{USER}\Obsidian\{VAULT_NAME}` avec son propre `CLAUDE.md` racine (celui genere precedemment).
 - Le vault doit etre backupe independamment (Syncthing ou equivalent), voir [[00-Architecture-Vault-Second-Brain]] section Backup.
 
 ## Extensions possibles
@@ -174,4 +174,4 @@ Tout prompt genere doit respecter :
 
 ---
 
-*Genere par Claude Opus 4.7 dans Cowork, le 2026-04-22. MIT license.*
+ 2026-04-27. MIT license.
