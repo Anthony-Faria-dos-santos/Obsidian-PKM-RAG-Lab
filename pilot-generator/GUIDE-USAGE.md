@@ -11,7 +11,7 @@ Trois couches, trois roles distincts :
 ```
 +------------------+     +-------------------+     +--------------------+
 |  pilot-generator |     |  PROMPT-PILOT-<ID>|     |  Vault Obsidian    |
-|  (ce projet)     | ==> |  (fichier genere) | ==> |  SecondBrain       |
+|  (ce projet)     | ==> |  (fichier genere) | ==> |  SecondBrain...    |
 |                  |     |                   |     |                    |
 | - Catalogue      |     | - Brief cluster   |     | - Pages .md        |
 | - Template       |     | - 6 phases        |     | - MOC              |
@@ -36,7 +36,7 @@ Ce que les prompts-pilotes font : une fois executes dans une session Claude Code
 - Windows avec PowerShell 7+ (ou 5.1 par defaut)
 - Claude Code CLI installe et authentifie (`claude doctor` passe)
 - Git installe et configure
-- Acces au vault Obsidian : `C:\Users\madko\Sandbox-lite\SecondBrain-Anthony`
+- Acces au vault Obsidian 
 
 ### Cote modeles
 
@@ -102,18 +102,18 @@ Le projet vit actuellement dans le dossier output Cowork. Copie-le vers un empla
 
 ```powershell
 # Destination recommandee
-$dst = "C:\Users\Anthony\Projects\pilot-generator"
+$dst = "C:\Users\{USER}\Projects\pilot-generator"
 New-Item -ItemType Directory -Path $dst -Force | Out-Null
 
-# Copie depuis le dossier Cowork output
-Copy-Item -Path "<chemin-output-cowork>\pilot-generator\*" -Destination $dst -Recurse -Force
+# Copie depuis le dossier du projet output
+Copy-Item -Path "<chemin-projet-cloné>\pilot-generator\*" -Destination $dst -Recurse -Force
 ```
 
 ### 4.2 Lancer le bootstrap
 
 ```powershell
-cd C:\Users\Anthony\Projects\pilot-generator
-.\scripts\init.ps1 -VaultPath "C:\Users\madko\Sandbox-lite\SecondBrain-Anthony" -SkipCurriculums
+cd C:\Users\{USER}\Projects\pilot-generator
+.\scripts\init.ps1 -VaultPath "C:\Users\{USER}\{VAULT_NAME}" -SkipCurriculums
 ```
 
 Le flag `-SkipCurriculums` est correct ici, les curriculums sont deja dans `curriculums/` (tu les as fournis). Si un jour tu veux les synchroniser depuis une source externe, retire le flag.
@@ -131,7 +131,7 @@ Le fichier `catalogue/real_ids.json` est un reste de la regeneration du catalogu
 ### 4.4 Lancer Claude Code
 
 ```powershell
-cd C:\Users\Anthony\Projects\pilot-generator
+cd C:\Users\{USER}\Projects\pilot-generator
 claude --model claude-opus-4-7
 ```
 
@@ -236,7 +236,7 @@ C'est l'etape finale, faite dans une session Claude Code **separee**. Elle est d
 ### 6.1 Ouvrir une session dans le vault
 
 ```powershell
-cd C:\Users\madko\Sandbox-lite\SecondBrain-Anthony
+cd C:\Users\{USER}\{VAULT_NAME}
 claude --model claude-sonnet-4-6
 # ou claude-opus-4-7 si le cluster est complexe
 ```
@@ -249,7 +249,7 @@ Deux options, equivalentes :
 
 **Option A, copier-coller** :
 
-1. Ouvrir `C:\Users\Anthony\Projects\pilot-generator\generated\D1-Cybersec\PROMPT-PILOT-C1.1-Fondamentaux-Cybersec.md` dans un editeur
+1. Ouvrir `C:\Users\{USER}\Projects\pilot-generator\generated\D1-Cybersec\PROMPT-PILOT-C1.1-Fondamentaux-Cybersec.md` dans un editeur
 2. Copier tout le contenu
 3. Le coller dans le chat Claude Code
 
@@ -258,7 +258,7 @@ Deux options, equivalentes :
 Dans le chat Claude Code, taper :
 
 ```
-Lis le fichier C:\Users\Anthony\Projects\pilot-generator\generated\D1-Cybersec\PROMPT-PILOT-C1.1-Fondamentaux-Cybersec.md
+Lis le fichier C:\Users\{USER}\Projects\pilot-generator\generated\D1-Cybersec\PROMPT-PILOT-C1.1-Fondamentaux-Cybersec.md
 et execute le protocole qu'il decrit.
 ```
 
@@ -369,8 +369,8 @@ R : Le vault est la source de verite de l'etat final (pages). Le `pilot-generato
 
 Premier cluster, suivre cette sequence de bout en bout pour valider que tout marche :
 
-1. [ ] `cd C:\Users\Anthony\Projects\pilot-generator`
-2. [ ] `.\scripts\init.ps1 -VaultPath "C:\Users\madko\Sandbox-lite\SecondBrain-Anthony" -SkipCurriculums`
+1. [ ] `cd C:\Users\{USER}\Projects\pilot-generator`
+2. [ ] `.\scripts\init.ps1 -VaultPath "C:\Users\{USER}\{VAULT_NAME}" -SkipCurriculums`
 3. [ ] `claude --model claude-opus-4-7`
 4. [ ] `/etat` (verifier 179 clusters, C2.0.6 en generated)
 5. [ ] `/next` (choisir un pilier simple, ex C3.2 Azure-Fundamentals)
@@ -463,4 +463,4 @@ Aucun de ces elements n'est necessaire pour commencer. Ils viennent au fur et a 
 
 ---
 
-Derniere mise a jour : 2026-04-22
+Derniere mise a jour : 2026-04-27
